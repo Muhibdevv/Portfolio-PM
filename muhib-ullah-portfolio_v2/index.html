@@ -302,57 +302,93 @@
           </dl>
         </div>
         <div class="case__art case__art--enterprise">
-          <svg class="enterprise-dashboard" viewBox="0 0 600 420" role="img" aria-labelledby="dashboard-title dashboard-desc">
-            <title id="dashboard-title">Enterprise analytics across desktop and mobile</title>
-            <desc id="dashboard-desc">An illustrative operations dashboard with performance metrics, a trend chart, a project table, and a synchronized mobile view.</desc>
-            <g fill="var(--dark)" stroke="var(--line-dark)">
-              <rect x="16" y="28" width="426" height="356" rx="5"/>
-              <path d="M16 66H442M72 66V384"/>
-              <rect x="456" y="142" width="128" height="242" rx="10"/>
-            </g>
-            <g fill="var(--on-dark-muted)">
-              <circle cx="31" cy="47" r="2"/><circle cx="40" cy="47" r="2"/><circle cx="49" cy="47" r="2"/>
-              <rect x="28" y="89" width="30" height="26" rx="3" fill="var(--line-dark)"/>
-              <path d="M36 107V98H40V107ZM43 107V94H47V107ZM50 107V101H54V107Z" fill="var(--accent-light)"/>
-              <rect x="32" y="133" width="22" height="3"/><rect x="32" y="158" width="22" height="3"/><rect x="32" y="183" width="22" height="3"/>
-            </g>
-            <g class="dashboard-type" fill="var(--on-dark-muted)" font-size="9">
-              <text x="87" y="50">WORKSPACE / ANALYTICS</text>
-              <text x="87" y="105" font-size="18" font-weight="600" fill="var(--on-dark)">Operations overview</text>
-              <text x="87" y="123">Portfolio performance</text><text x="344" y="123">This quarter</text>
-              <circle class="dashboard-live" cx="369" cy="47" r="3" fill="var(--accent-light)"/><text x="378" y="50">Live sync</text>
-            </g>
-            <g fill="none" stroke="var(--line-dark)">
-              <path d="M87 139H425M87 193H425M198 139V193M311 139V193"/>
-              <path d="M87 226H425M87 248H425M87 270H425M87 292H425"/>
-            </g>
-            <g class="dashboard-type" font-size="8" fill="var(--on-dark-muted)">
-              <text x="89" y="153">ACTIVE PROJECTS</text><text x="211" y="153">ON TRACK</text><text x="324" y="153">TEAM CAPACITY</text>
-              <text x="89" y="180" font-size="22" fill="var(--on-dark)">24</text><text x="211" y="180" font-size="22" fill="var(--on-dark)">92%</text><text x="324" y="180" font-size="22" fill="var(--on-dark)">84%</text>
-              <text x="89" y="213" font-size="10" fill="var(--on-dark)">Delivery performance</text><text x="387" y="213">12 WK</text>
-              <text x="89" y="309">APR</text><text x="239" y="309">MAY</text><text x="407" y="309">JUN</text>
-            </g>
-            <path class="dashboard-trend" d="M89 280L118 274L147 278L176 260L205 264L234 250L263 252L292 240L321 246L350 230L379 234L417 221" fill="none" stroke="var(--accent-light)" stroke-width="2" pathLength="100"/>
-            <circle class="dashboard-live" cx="417" cy="221" r="3" fill="var(--accent-light)"/>
-            <g stroke="var(--line-dark)"><path d="M87 323H425M87 344H425M87 366H425"/></g>
-            <g class="dashboard-type" font-size="8" fill="var(--on-dark-muted)">
-              <text x="89" y="337">PROJECT</text><text x="257" y="337">STATUS</text><text x="361" y="337">PROGRESS</text>
-              <text x="89" y="358" fill="var(--on-dark)">Platform migration</text><text x="265" y="358">On track</text>
-              <text x="89" y="380" fill="var(--on-dark)">Client portal</text><text x="265" y="380">In review</text>
-            </g>
-            <g fill="var(--accent-light)"><circle cx="257" cy="355" r="2"/><circle cx="257" cy="377" r="2"/></g>
-            <g stroke="var(--line-dark)" stroke-width="3"><path d="M362 355H415M362 377H415"/></g>
-            <g class="dashboard-progress" stroke="var(--accent-light)" stroke-width="3"><path d="M362 355H401"/><path d="M362 377H387"/></g>
-            <path class="dashboard-sync" d="M442 95H520V134" fill="none" stroke="var(--accent-light)" stroke-width="1.2"/>
-            <g class="dashboard-type" fill="var(--on-dark-muted)" font-size="8"><text x="464" y="80">CONNECTED VIEW</text></g>
-            <path d="M500 154H540" stroke="var(--line-dark)" stroke-width="3" stroke-linecap="round"/>
-            <g class="dashboard-type" fill="var(--on-dark)" font-size="11" font-weight="600"><text x="470" y="181">Overview</text></g>
-            <g class="dashboard-type" fill="var(--on-dark-muted)" font-size="8"><text x="470" y="201">ON TRACK</text><text x="470" y="253">DELIVERY TREND</text><text x="470" y="330">Platform migration</text><text x="470" y="355">Client portal</text></g>
-            <text class="dashboard-type" x="470" y="228" font-size="23" fill="var(--on-dark)">92%</text>
-            <g stroke="var(--line-dark)" fill="none"><path d="M470 237H570M470 300H570M470 339H570M470 364H570"/></g>
-            <path class="dashboard-trend" d="M470 288L483 283L496 285L509 277L522 279L535 269L548 271L570 260" fill="none" stroke="var(--accent-light)" stroke-width="1.8" pathLength="100"/>
-            <g class="dashboard-live" fill="var(--accent-light)"><circle cx="567" cy="327" r="2"/><circle cx="567" cy="352" r="2"/></g>
-          </svg>
+         <svg class="enterprise-dashboard" viewBox="0 0 600 420" role="img" aria-labelledby="dashboard-title dashboard-desc">
+  <title id="dashboard-title">Enterprise analytics across desktop and mobile</title>
+  <desc id="dashboard-desc">An illustrative operations dashboard with performance metrics, a trend chart, a project table, and a synchronized mobile view.</desc>
+  <style>
+    .dash-type { font-family: 'Manrope', system-ui, -apple-system, sans-serif; letter-spacing: 0; }
+    .dash-sync { stroke-dasharray: 4 5; animation: dash-flow 3s linear infinite; }
+    .dash-trend { stroke-dasharray: 100; stroke-dashoffset: 0; animation: dash-trace 7s cubic-bezier(.2,.7,.2,1) infinite; }
+    .dash-live { animation: dash-pulse 3s ease-in-out infinite; }
+    .dash-prog { animation: dash-progress 5s ease-in-out infinite; }
+    @keyframes dash-flow { to { stroke-dashoffset: -36; } }
+    @keyframes dash-trace { 0% { stroke-dashoffset: 100; } 35%, 100% { stroke-dashoffset: 0; } }
+    @keyframes dash-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .4; } }
+    @keyframes dash-progress { 0%, 100% { opacity: .75; } 50% { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) {
+      .dash-sync, .dash-trend, .dash-live, .dash-prog {
+        animation: none !important;
+        stroke-dashoffset: 0 !important;
+        opacity: 1 !important;
+      }
+    }
+  </style>
+
+  <!-- Frames & Outer Windows -->
+  <g fill="#20251F" stroke="#3A4237">
+    <rect x="16" y="28" width="426" height="356" rx="5"/>
+    <path d="M16 66H442M72 66V384"/>
+    <rect x="456" y="142" width="128" height="242" rx="10"/>
+  </g>
+
+  <!-- Sidebar & Navigation Icons -->
+  <g fill="#A9B1A6">
+    <circle cx="31" cy="47" r="2"/><circle cx="40" cy="47" r="2"/><circle cx="49" cy="47" r="2"/>
+    <rect x="28" y="89" width="30" height="26" rx="3" fill="#3A4237"/>
+    <path d="M36 107V98H40V107ZM43 107V94H47V107ZM50 107V101H54V107Z" fill="#8FBF9F"/>
+    <rect x="32" y="133" width="22" height="3"/><rect x="32" y="158" width="22" height="3"/><rect x="32" y="183" width="22" height="3"/>
+  </g>
+
+  <!-- Header Section -->
+  <g class="dash-type" fill="#A9B1A6" font-size="9">
+    <text x="87" y="50">WORKSPACE / ANALYTICS</text>
+    <text x="87" y="105" font-size="18" font-weight="600" fill="#F2F4EF">Operations overview</text>
+    <text x="87" y="123">Portfolio performance</text><text x="344" y="123">This quarter</text>
+    <circle class="dash-live" cx="369" cy="47" r="3" fill="#8FBF9F"/><text x="378" y="50">Live sync</text>
+  </g>
+
+  <!-- Table & Card Grid Dividers -->
+  <g fill="none" stroke="#3A4237">
+    <path d="M87 139H425M87 193H425M198 139V193M311 139V193"/>
+    <path d="M87 226H425M87 248H425M87 270H425M87 292H425"/>
+  </g>
+
+  <!-- Top Metrics -->
+  <g class="dash-type" font-size="8" fill="#A9B1A6">
+    <text x="89" y="153">ACTIVE PROJECTS</text><text x="211" y="153">ON TRACK</text><text x="324" y="153">TEAM CAPACITY</text>
+    <text x="89" y="180" font-size="22" fill="#F2F4EF">24</text><text x="211" y="180" font-size="22" fill="#F2F4EF">92%</text><text x="324" y="180" font-size="22" fill="#F2F4EF">84%</text>
+    <text x="89" y="213" font-size="10" fill="#F2F4EF">Delivery performance</text><text x="387" y="213">12 WK</text>
+    <text x="89" y="309">APR</text><text x="239" y="309">MAY</text><text x="407" y="309">JUN</text>
+  </g>
+
+  <!-- Trend Sparkline & Target Indicator -->
+  <path class="dash-trend" d="M89 280L118 274L147 278L176 260L205 264L234 250L263 252L292 240L321 246L350 230L379 234L417 221" fill="none" stroke="#8FBF9F" stroke-width="2" pathLength="100"/>
+  <circle class="dash-live" cx="417" cy="221" r="3" fill="#8FBF9F"/>
+
+  <!-- Project Progress Table -->
+  <g stroke="#3A4237"><path d="M87 323H425M87 344H425M87 366H425"/></g>
+  <g class="dash-type" font-size="8" fill="#A9B1A6">
+    <text x="89" y="337">PROJECT</text><text x="257" y="337">STATUS</text><text x="361" y="337">PROGRESS</text>
+    <text x="89" y="358" fill="#F2F4EF">Platform migration</text><text x="265" y="358">On track</text>
+    <text x="89" y="380" fill="#F2F4EF">Client portal</text><text x="265" y="380">In review</text>
+  </g>
+  <g fill="#8FBF9F"><circle cx="257" cy="355" r="2"/><circle cx="257" cy="377" r="2"/></g>
+  <g stroke="#3A4237" stroke-width="3"><path d="M362 355H415M362 377H415"/></g>
+  <g class="dash-prog" stroke="#8FBF9F" stroke-width="3"><path d="M362 355H401"/><path d="M362 377H387"/></g>
+
+  <!-- Mobile Bridge Sync Line -->
+  <path class="dash-sync" d="M442 95H520V134" fill="none" stroke="#8FBF9F" stroke-width="1.2"/>
+  <g class="dash-type" fill="#A9B1A6" font-size="8"><text x="464" y="80">CONNECTED VIEW</text></g>
+
+  <!-- Mobile Companion Device Screen -->
+  <path d="M500 154H540" stroke="#3A4237" stroke-width="3" stroke-linecap="round"/>
+  <g class="dash-type" fill="#F2F4EF" font-size="11" font-weight="600"><text x="470" y="181">Overview</text></g>
+  <g class="dash-type" fill="#A9B1A6" font-size="8"><text x="470" y="201">ON TRACK</text><text x="470" y="253">DELIVERY TREND</text><text x="470" y="330">Platform migration</text><text x="470" y="355">Client portal</text></g>
+  <text class="dash-type" x="470" y="228" font-size="23" fill="#F2F4EF">92%</text>
+  <g stroke="#3A4237" fill="none"><path d="M470 237H570M470 300H570M470 339H570M470 364H570"/></g>
+  <path class="dash-trend" d="M470 288L483 283L496 285L509 277L522 279L535 269L548 271L570 260" fill="none" stroke="#8FBF9F" stroke-width="1.8" pathLength="100"/>
+  <g class="dash-live" fill="#8FBF9F"><circle cx="567" cy="327" r="2"/><circle cx="567" cy="352" r="2"/></g>
+</svg>
           <p class="case__note">Illustrative concept — not a deployed interface.</p>
         </div>
       </article>
