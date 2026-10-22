@@ -60,56 +60,74 @@
 
     <figure class="hero__art" aria-label="Illustration: software delivery flowing from requirements through planning, development and review to release, connecting people, technology and delivery.">
       <svg viewBox="0 0 460 520" role="img" aria-hidden="true" class="flow">
+        <style>
+.workflow-current{stroke-dasharray:5 9}
+.workflow-feedback{stroke-dasharray:3 5;opacity:.6}
+.workflow-row{transition:fill .2s,stroke .2s}
+.workflow-stage:hover .workflow-row{fill:#EAF0E9;stroke:#315E45}
+.workflow-halo{transform-box:fill-box;transform-origin:center}
+.workflow-stage:nth-child(2) .workflow-halo{animation-delay:1.4s}
+.workflow-stage:nth-child(3) .workflow-halo{animation-delay:2.8s}
+.workflow-stage:nth-child(4) .workflow-halo{animation-delay:4.2s}
+.workflow-stage:nth-child(5) .workflow-halo{animation-delay:5.6s}
+.workflow-current{animation:wf-stream 2s linear infinite}
+.workflow-feedback{animation:wf-feedback 2s linear infinite}
+.workflow-halo{animation:wf-stage 7s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){.workflow-current,.workflow-feedback,.workflow-halo{animation:none}}
+@keyframes wf-stream{to{stroke-dashoffset:-28}}
+@keyframes wf-feedback{to{stroke-dashoffset:-16}}
+@keyframes wf-stage{0%,24%,100%{opacity:.35;transform:scale(1)}10%{opacity:.85;transform:scale(1.15)}}
+</style>
         <defs>
-          <pattern id="g" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="var(--line)" stroke-width=".6"/></pattern>
+          <pattern id="g" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#E1E5DE" stroke-width=".6"></path></pattern>
         </defs>
-        <rect x="0" y="0" width="460" height="520" fill="url(#g)"/>
+        <rect x="0" y="0" width="460" height="520" fill="url(#g)"></rect>
         <!-- three tracks -->
-        <g class="tracks" font-family="Inter" font-size="9" fill="var(--muted)" letter-spacing=".08em">
+        <g class="tracks" font-family="Inter" font-size="9" fill="#626960" letter-spacing=".08em">
           <text x="24" y="34">PEOPLE</text>
           <text x="196" y="34">TECHNOLOGY</text>
           <text x="368" y="34">DELIVERY</text>
-          <line x1="24" y1="44" x2="436" y2="44" stroke="var(--ink)" stroke-width="1"/>
+          <line x1="24" y1="44" x2="436" y2="44" stroke="#20251F" stroke-width="1"></line>
         </g>
         <!-- Connected delivery stages with a review feedback loop -->
-        <path d="M56 96V424" fill="none" stroke="var(--line)" stroke-width="2"/>
-        <path class="workflow-current" d="M56 96V424" fill="none" stroke="var(--accent)" stroke-width="1.5"/>
-        <path class="workflow-feedback" d="M374 344H404V264H374" fill="none" stroke="var(--accent)" stroke-width="1"/>
-        <path d="M380 260L374 264L380 268" fill="none" stroke="var(--accent)" stroke-width="1"/>
-        <g class="stages workflow-stages" font-family="Manrope" font-weight="700" font-size="15" fill="var(--ink)">
+        <path d="M56 96V424" fill="none" stroke="#E1E5DE" stroke-width="2"></path>
+        <path class="workflow-current" d="M56 96V424" fill="none" stroke="#315E45" stroke-width="1.5"></path>
+        <path class="workflow-feedback" d="M374 344H404V264H374" fill="none" stroke="#315E45" stroke-width="1"></path>
+        <path d="M380 260L374 264L380 268" fill="none" stroke="#315E45" stroke-width="1"></path>
+        <g class="stages workflow-stages" font-family="Manrope" font-weight="700" font-size="15" fill="#20251F">
           <g class="workflow-stage">
-            <rect class="workflow-row" x="80" y="68" width="288" height="60" rx="3"/>
-            <circle class="workflow-halo" cx="56" cy="96" r="13"/><circle cx="56" cy="96" r="5" fill="var(--accent)"/>
-            <text class="workflow-number" x="92" y="91">01</text><text x="123" y="92">Requirements</text>
-            <text class="workflow-detail" x="123" y="112">Scope · constraints · success criteria</text>
+            <rect class="workflow-row" fill="#FFFFFF" stroke="#E1E5DE" x="80" y="68" width="288" height="60" rx="3"></rect>
+            <circle class="workflow-halo" fill="#EAF0E9" stroke="#315E45" stroke-width=".7" opacity=".35" cx="56" cy="96" r="13"></circle><circle cx="56" cy="96" r="5" fill="#315E45"></circle>
+            <text class="workflow-number" font-size="10" font-weight="500" fill="#315E45" x="92" y="91">01</text><text x="123" y="92">Requirements</text>
+            <text class="workflow-detail" font-size="10" font-weight="400" fill="#626960" x="123" y="112">Scope · constraints · success criteria</text>
           </g>
           <g class="workflow-stage">
-            <rect class="workflow-row" x="80" y="148" width="288" height="60" rx="3"/>
-            <circle class="workflow-halo" cx="56" cy="176" r="13"/><circle cx="56" cy="176" r="5" fill="var(--paper)" stroke="var(--accent)" stroke-width="1.5"/>
-            <text class="workflow-number" x="92" y="171">02</text><text x="123" y="172">Planning</text>
-            <text class="workflow-detail" x="123" y="192">Priorities · estimates · team alignment</text>
+            <rect class="workflow-row" fill="#FFFFFF" stroke="#E1E5DE" x="80" y="148" width="288" height="60" rx="3"></rect>
+            <circle class="workflow-halo" fill="#EAF0E9" stroke="#315E45" stroke-width=".7" opacity=".35" cx="56" cy="176" r="13"></circle><circle cx="56" cy="176" r="5" fill="#FFFFFF" stroke="#315E45" stroke-width="1.5"></circle>
+            <text class="workflow-number" font-size="10" font-weight="500" fill="#315E45" x="92" y="171">02</text><text x="123" y="172">Planning</text>
+            <text class="workflow-detail" font-size="10" font-weight="400" fill="#626960" x="123" y="192">Priorities · estimates · team alignment</text>
           </g>
           <g class="workflow-stage">
-            <rect class="workflow-row" x="80" y="228" width="288" height="60" rx="3"/>
-            <circle class="workflow-halo" cx="56" cy="256" r="13"/><circle cx="56" cy="256" r="5" fill="var(--paper)" stroke="var(--accent)" stroke-width="1.5"/>
-            <text class="workflow-number" x="92" y="251">03</text><text x="123" y="252">Development</text>
-            <text class="workflow-detail" x="123" y="272">Implementation · dependencies · blockers</text>
+            <rect class="workflow-row" fill="#FFFFFF" stroke="#E1E5DE" x="80" y="228" width="288" height="60" rx="3"></rect>
+            <circle class="workflow-halo" fill="#EAF0E9" stroke="#315E45" stroke-width=".7" opacity=".35" cx="56" cy="256" r="13"></circle><circle cx="56" cy="256" r="5" fill="#FFFFFF" stroke="#315E45" stroke-width="1.5"></circle>
+            <text class="workflow-number" font-size="10" font-weight="500" fill="#315E45" x="92" y="251">03</text><text x="123" y="252">Development</text>
+            <text class="workflow-detail" font-size="10" font-weight="400" fill="#626960" x="123" y="272">Implementation · dependencies · blockers</text>
           </g>
           <g class="workflow-stage">
-            <rect class="workflow-row" x="80" y="308" width="288" height="60" rx="3"/>
-            <circle class="workflow-halo" cx="56" cy="336" r="13"/><circle cx="56" cy="336" r="5" fill="var(--paper)" stroke="var(--accent)" stroke-width="1.5"/>
-            <text class="workflow-number" x="92" y="331">04</text><text x="123" y="332">Review &amp; validation</text>
-            <text class="workflow-detail" x="123" y="352">Quality checks · feedback · acceptance</text>
+            <rect class="workflow-row" fill="#FFFFFF" stroke="#E1E5DE" x="80" y="308" width="288" height="60" rx="3"></rect>
+            <circle class="workflow-halo" fill="#EAF0E9" stroke="#315E45" stroke-width=".7" opacity=".35" cx="56" cy="336" r="13"></circle><circle cx="56" cy="336" r="5" fill="#FFFFFF" stroke="#315E45" stroke-width="1.5"></circle>
+            <text class="workflow-number" font-size="10" font-weight="500" fill="#315E45" x="92" y="331">04</text><text x="123" y="332">Review &amp; validation</text>
+            <text class="workflow-detail" font-size="10" font-weight="400" fill="#626960" x="123" y="352">Quality checks · feedback · acceptance</text>
           </g>
           <g class="workflow-stage">
-            <rect class="workflow-row" x="80" y="388" width="288" height="60" rx="3"/>
-            <circle class="workflow-halo" cx="56" cy="416" r="13"/><rect x="50" y="410" width="12" height="12" rx="1" fill="var(--accent)"/>
-            <text class="workflow-number" x="92" y="411">05</text><text x="123" y="412">Release &amp; handover</text>
-            <text class="workflow-detail" x="123" y="432">Delivery · documentation · ownership</text>
+            <rect class="workflow-row" fill="#FFFFFF" stroke="#E1E5DE" x="80" y="388" width="288" height="60" rx="3"></rect>
+            <circle class="workflow-halo" fill="#EAF0E9" stroke="#315E45" stroke-width=".7" opacity=".35" cx="56" cy="416" r="13"></circle><rect x="50" y="410" width="12" height="12" rx="1" fill="#315E45"></rect>
+            <text class="workflow-number" font-size="10" font-weight="500" fill="#315E45" x="92" y="411">05</text><text x="123" y="412">Release &amp; handover</text>
+            <text class="workflow-detail" font-size="10" font-weight="400" fill="#626960" x="123" y="432">Delivery · documentation · ownership</text>
           </g>
         </g>
-        <g font-family="Manrope" font-size="9" fill="var(--muted)"><text x="24" y="484">ALIGNED PEOPLE. CLEAR DECISIONS. WORKING SOFTWARE.</text></g>
-        <line x1="24" y1="500" x2="436" y2="500" stroke="var(--ink)" stroke-width="1"/>
+        <g font-family="Manrope" font-size="9" fill="#626960"><text x="24" y="484">ALIGNED PEOPLE. CLEAR DECISIONS. WORKING SOFTWARE.</text></g>
+        <line x1="24" y1="500" x2="436" y2="500" stroke="#20251F" stroke-width="1"></line>
       </svg>
       <figcaption>Fig. 01 — From requirement to release, one connected line.</figcaption>
     </figure>
