@@ -254,27 +254,37 @@
       <article class="case case--a reveal" aria-labelledby="c1">
         <div class="case__art">
           <svg viewBox="0 0 600 380" aria-hidden="true">
-            <g stroke="var(--line-dark)" stroke-width="1" fill="none">
-              <rect x="30" y="40" width="120" height="300"/>
-              <rect x="240" y="100" width="120" height="180"/>
-              <rect x="450" y="40" width="120" height="300"/>
-            </g>
-            <g font-family="Inter" font-size="10" fill="var(--on-dark-muted)" letter-spacing=".08em">
-              <text x="30" y="28">SOURCE DATA</text><text x="240" y="88">PROCESSING</text><text x="450" y="28">CHANNEL FEEDS</text>
-            </g>
-            <g fill="var(--on-dark-muted)" opacity=".55">
-              <rect x="44" y="60" width="92" height="6"/><rect x="44" y="76" width="70" height="6"/><rect x="44" y="92" width="84" height="6"/><rect x="44" y="108" width="60" height="6"/><rect x="44" y="124" width="88" height="6"/><rect x="44" y="140" width="74" height="6"/><rect x="44" y="156" width="92" height="6"/><rect x="44" y="172" width="54" height="6"/><rect x="44" y="188" width="80" height="6"/><rect x="44" y="204" width="66" height="6"/>
-            </g>
-            <g class="feed-lines" stroke="var(--accent-light)" stroke-width="1.2" fill="none">
-              <path d="M150 90 C200 90 200 150 240 150"/><path d="M150 190 C200 190 200 190 240 190"/><path d="M150 290 C200 290 200 230 240 230"/>
-              <path d="M360 150 C410 150 410 80 450 80"/><path d="M360 190 C410 190 410 190 450 190"/><path d="M360 230 C410 230 410 300 450 300"/>
-            </g>
-            <g font-family="Manrope" font-weight="600" font-size="11" fill="var(--on-dark)">
-              <text x="256" y="140">Map</text><text x="256" y="180">Validate</text><text x="256" y="220">Transform</text><text x="256" y="260">Publish</text>
-            </g>
-            <g fill="var(--accent-light)"><circle cx="464" cy="80" r="3"/><circle cx="464" cy="190" r="3"/><circle cx="464" cy="300" r="3"/></g>
-            <g font-family="Inter" font-size="10" fill="var(--on-dark-muted)"><text x="474" y="84">Feed A</text><text x="474" y="194">Feed B</text><text x="474" y="304">Feed C</text></g>
-          </svg>
+  <style>
+    .feed-flow { stroke-dasharray: 4 5; animation: feed-stream 3s linear infinite; }
+    @keyframes feed-stream { to { stroke-dashoffset: -36; } }
+  </style>
+  <g stroke="#3A4237" stroke-width="1" fill="none">
+    <rect x="30" y="40" width="120" height="300"/>
+    <rect x="240" y="100" width="120" height="180"/>
+    <rect x="450" y="40" width="120" height="300"/>
+  </g>
+  <g font-family="Inter, system-ui, sans-serif" font-size="10" fill="#A9B1A6" letter-spacing=".08em">
+    <text x="30" y="28">SOURCE DATA</text><text x="240" y="88">PROCESSING</text><text x="450" y="28">CHANNEL FEEDS</text>
+  </g>
+  <g fill="#A9B1A6" opacity=".55">
+    <rect x="44" y="60" width="92" height="6"/><rect x="44" y="76" width="70" height="6"/><rect x="44" y="92" width="84" height="6"/><rect x="44" y="108" width="60" height="6"/><rect x="44" y="124" width="88" height="6"/><rect x="44" y="140" width="74" height="6"/><rect x="44" y="156" width="92" height="6"/><rect x="44" y="172" width="54" height="6"/><rect x="44" y="188" width="80" height="6"/><rect x="44" y="204" width="66" height="6"/>
+  </g>
+  <g class="feed-flow" stroke="#8FBF9F" stroke-width="1.2" fill="none">
+    <path d="M150 90 C200 90 200 150 240 150"/><path d="M150 190 C200 190 200 190 240 190"/><path d="M150 290 C200 290 200 230 240 230"/>
+    <path d="M360 150 C410 150 410 80 450 80"/><path d="M360 190 C410 190 410 190 450 190"/><path d="M360 230 C410 230 410 300 450 300"/>
+  </g>
+  <g fill="#8FBF9F">
+    <circle cx="150" cy="90" r="3"/><circle cx="150" cy="190" r="3"/><circle cx="150" cy="290" r="3"/>
+    <circle cx="240" cy="150" r="3"/><circle cx="240" cy="190" r="3"/><circle cx="240" cy="230" r="3"/>
+    <circle cx="360" cy="150" r="3"/><circle cx="360" cy="190" r="3"/><circle cx="360" cy="230" r="3"/>
+    <circle cx="450" cy="80" r="3"/><circle cx="450" cy="190" r="3"/><circle cx="450" cy="300" r="3"/>
+  </g>
+  <g fill="#A9B1A6" opacity=".45">
+    <rect x="254" y="120" width="92" height="5"/><rect x="254" y="132" width="76" height="5"/><rect x="254" y="144" width="88" height="5"/><rect x="254" y="156" width="64" height="5"/><rect x="254" y="168" width="92" height="5"/><rect x="254" y="180" width="70" height="5"/>
+    <rect x="464" y="60" width="92" height="6"/><rect x="464" y="76" width="70" height="6"/><rect x="464" y="92" width="84" height="6"/><rect x="464" y="108" width="60" height="6"/><rect x="464" y="124" width="88" height="6"/><rect x="464" y="140" width="74" height="6"/><rect x="464" y="156" width="92" height="6"/><rect x="464" y="172" width="54" height="6"/><rect x="464" y="188" width="80" height="6"/><rect x="464" y="204" width="66" height="6"/>
+  </g>
+</svg>
+
           <p class="case__note">Illustrative concept — not a screenshot of the client platform.</p>
         </div>
         <div class="case__body">
