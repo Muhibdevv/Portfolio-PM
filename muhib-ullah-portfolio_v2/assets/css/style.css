@@ -276,7 +276,7 @@ svg { display: block; width: 100%; height: auto; }
   .hero__art { max-width: 520px; }
   .split, .edu { grid-template-columns: 1fr; }
   .role { grid-template-columns: 1fr; gap: var(--s-2); }
-  .role__meta { flex-direction: row; flex-wrap: wrap; gap: .25rem 1.25rem; }
+  .role__meta { flex-direction: row; flex-wrap: wrap; gap: .25rem 1.25rem; align-items: center; }
   .role__meta br { display: none; }
   .case--a, .case--b { grid-template-columns: 1fr; }
   .case--b .case__art { order: -1; }
